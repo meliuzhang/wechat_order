@@ -1,0 +1,41 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/sell?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: 123456
+  redis:
+    host: 127.0.0.1
+    port: 6379
+  # 表示如果返回的值为null就不显示
+  jackson:
+    default-property-inclusion: non_null
+server:
+  context-path: /sell
+#logging:
+#  pattern:
+#    console: "%d - %msg%n"
+##  path: /var/log/tomcat/
+#  file: /var/log/tomcat/sell.log
+#  level:
+#    com.imooc.LoggerTest: debug
+
+wechat:
+  #微信公众账号
+  mpAppId: wxd898fcb01713c658 #微信公众平台id(用于微信授权获取openid)
+  mpAppSecret: 29d8a650db31472aa8789oe3bod739f2 #微信公众平台密钥（用于微信授权获取openid）
+  #微信开放平台，卖家扫码登陆用
+  openAppId: wx6ad144e54af67d87 #微信开放平台id
+  openAppSecret: 91a2ff6d38a2bbccfb7e9f9079108e2e #微信开放平台密钥
+  # 支付/商户号
+  mchId: 1409146202 #微信商户平台商户号
+  mchKey: c976503d34ca432c601361f969fd8d85 #微信商户平台商户密钥
+  keyPath: /var/weixin_cert/h5.p12  #微信商户平台商户证书路径(微信退款使用)
+  notifyUrl: http://sell.natapp4.cc/sell/pay/notify #微信支付异步通知地址
+  templateId:                     #微信模板消息ID
+    orderStatus: e-Cqq67QxD6YNI41iRiqawEYdFavW_7pc7LyEMb-yeQ
+projectUrl:
+  wechatMpAuthorize: http://lb888.natapp1.cc #微信公众平台授权url
+  wechatOpenAuthorize: http://lb888.natapp1.cc #微信开放平台授权url
+  sell: http://lb888.natapp1.cc #本项目url
+
